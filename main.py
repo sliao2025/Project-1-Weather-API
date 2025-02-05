@@ -11,7 +11,8 @@ def main():
 		location = input("Enter a city name: ")
 
 		get_weather(location)
-
-
+		if location == 'quit':
+			print('goodbye')
+			break
 
 main()
