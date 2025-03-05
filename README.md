@@ -2,5 +2,5 @@
 
 # Starting Python Environment
 
-`On mac, use source weather/Scripts/activate`
-`On windows, use source ../weather/Scripts/activate`
+On mac use the command `weather/Scripts/activate` in your root directory <br>
+On windows use the command `../weather/Scripts/activate` in your root directory
