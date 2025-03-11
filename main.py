@@ -4,13 +4,11 @@ import json
 def get_weather(lat:str, long:str):
 	points_url = f"https://api.weather.gov/points/{lat},{long}"
 
-	response = requests.get(points_url)
-	print(response.status_code)
-	jsonfile = response.json()
-	# dictionary = json.loads(jsonfile)
-	keys = jsonfile.keys()
-	print(list(keys))
-	print(jsonfile["type"])
+	headers = {
+        "User-Agent": "MyWeatherApp/1.0 (contact@example.com)"
+  }
+	response = requests.get(points_url, headers=headers)
+	print(response.json())
 
 def main():
 	while True:
