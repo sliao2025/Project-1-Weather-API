@@ -2,6 +2,7 @@ cities = []
 
 def get_weather(city:str):
 	#make API call
+	
 	cities.append(city)
 	print(cities)
 
