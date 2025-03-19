@@ -8,7 +8,17 @@ def get_weather(lat:str, long:str):
         "User-Agent": "MyWeatherApp/1.0 (contact@example.com)"
   }
 	response = requests.get(points_url, headers=headers)
-	print(response.json())
+	weather_api_response = response.json()
+	forecast_url = weather_api_response["properties"]["forecast"]
+
+	forecast = requests.get(forecast_url, headers=headers)
+	forecast_response = forecast.json()
+
+	properties_forecast_response = forecast_response["properties"]["periods"]
+	for item in properties_forecast_response:
+		print(f"Item: {item}")
+		print("\n")	
+	
 
 def main():
 	while True:
@@ -20,8 +30,8 @@ def main():
 		print("Tempreture: " + '''tempreture''')
 		print("Conditions: " + '''conditions''')
 		print("more stuff that id find on a weather app")
-		# if location == 'quit':
-		# 	print('goodbye')
-		# 	break
+		if lat == 'quit':
+			print('goodbye')
+		break
 
 main()
